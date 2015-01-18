@@ -31,6 +31,8 @@ class ViewController: UIViewController {
     var betMaxButton : UIButton!
     var spinButton : UIButton!
     
+    var slots:[[Slot]]
+    
     //static labels
     var creditsTitleLabel : UILabel!
     var betTitleLabel : UILabel!
@@ -59,6 +61,7 @@ class ViewController: UIViewController {
         self.setupSecondContainer(secondContainer)
         self.setupThirdContainer(thirdContainer)
         self.setupFourthCountainer(fourthContainer)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,7 +87,8 @@ class ViewController: UIViewController {
     
     func spinButtonPressed(button: UIButton)
     {
-        println("Spin Button Pressed")
+        slots = Factory.createSlots()
+        setupSecondContainer(self.secondContainer)
     }
     
     
